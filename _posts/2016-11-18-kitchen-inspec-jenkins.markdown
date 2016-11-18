@@ -4,22 +4,23 @@ title:  "Test Kitchen, Inspec, and Jenkins Reporting"
 date:   2016-11-18 00:00:00 -0500
 categories: chef
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+We've standardized our kitchen verifier on
+[Inspec](https://github.com/chef/inspec) at my corner of NCR and we're in need
+of a solution for reporting test-kitchen runs from pull request verifiers in
+jenkins. The default test reporting format for most jenkins jobs is the
+[JUnit xml format](https://github.com/windyroad/JUnit-Schema)
+<sup>[1](#non-canonical)</sup>. We're lucky because unlike chefspec Inspec
+operates on the host rather than the kitchen vm. This means that we can use
+Inspec's `--format JUnit` option in the kitchen config file like so:
 
-  To add new posts, simply add a file in the `_posts` directory that follows the convention `name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+```ruby
+verifier:
+  name: inspec
+  format: json-min
+  output: ./inspec_output.json
+```
 
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: http://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+right? Well.. the only supported formats at the time of writing are
+`cli, progress, documentation, json, json-min`. I've opened an inspec issue
+[here](https://github.com/chef/inspec/issues/1301) and will see if I can take a
+crack at it assuming I'm not beaten to the punch.
