@@ -17,7 +17,7 @@ config file like so:
 verifier:
   name: inspec
   format: junit
-  output: ./inspec_output.json
+  output: ./inspec_output.xml
 ```
 
 right? Well.. the only supported formats at the time of writing are
