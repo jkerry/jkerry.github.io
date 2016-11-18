@@ -16,7 +16,7 @@ config file like so:
 ```ruby
 verifier:
   name: inspec
-  format: json-min
+  format: junit
   output: ./inspec_output.json
 ```
 
