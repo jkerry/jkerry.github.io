@@ -8,10 +8,10 @@ We've standardized our kitchen verifier on
 [Inspec](https://github.com/chef/inspec) at my corner of NCR and we're in need
 of a solution for reporting test-kitchen runs from pull request verifiers in
 jenkins. The default test reporting format for most jenkins jobs is the
-[JUnit xml format](https://github.com/windyroad/JUnit-Schema)
-<sup>[1](#non-canonical)</sup>. We're lucky because unlike chefspec Inspec
-operates on the host rather than the kitchen vm. This means that we can use
-Inspec's `--format JUnit` option in the kitchen config file like so:
+[JUnit xml format](https://github.com/windyroad/JUnit-Schema). We're lucky
+because unlike chefspec Inspec operates on the host rather than the kitchen vm.
+This means that we can use Inspec's `--format JUnit` option in the kitchen
+config file like so:
 
 ```ruby
 verifier:
