@@ -24,3 +24,9 @@ right? Well.. the only supported formats at the time of writing are
 `cli, progress, documentation, json, json-min`. I've opened an inspec issue
 [here](https://github.com/chef/inspec/issues/1301) and will see if I can take a
 crack at it assuming I'm not beaten to the punch.
+
+#### Edit: PR Submitted
+It turns out this was pretty easy since a JUnit RSpec formatter,
+[rspec_junit_formatter](https://github.com/sj26/rspec_junit_formatter), already
+exists. This would require an additional dependency for inspec so we'll see if
+it's judged worthy.
