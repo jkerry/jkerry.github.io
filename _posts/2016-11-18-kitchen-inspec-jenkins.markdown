@@ -36,7 +36,7 @@ verifier name.
 
 ![Kitchen inspec tests location]({{ site.url }}/assets/images/kitchen-inspec-placement.png)
 
-See [my resume´](https://github.com/jkerry/CookbookResume) for an example.
+See [my resumé](https://github.com/jkerry/CookbookResume) for an example.
 
 # Jenkins Configuration
 
