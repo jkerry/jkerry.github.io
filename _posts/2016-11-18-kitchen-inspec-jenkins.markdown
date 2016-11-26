@@ -29,7 +29,7 @@ verifier:
   output: ./inspec_output.xml
 ```
 
-The `format:` option corresponds with the --format cli option. you'll likely
+The `format:` option corresponds with the `--format cli` option. you'll likely
 need the kitchen-inspec gem. Note the output file location for Jenkins. It might
 be worth noting that the test location in your cookbook will change with the
 verifier name.
