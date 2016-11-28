@@ -4,9 +4,7 @@ title:  "Test Kitchen, Inspec, and Jenkins Reporting"
 date:   2016-11-18 00:00:00 -0500
 categories: chef
 ---
-> The [pull request](https://github.com/chef/inspec/pull/1304) that adds the
-> junit functionality is currently under review.  When it's live I'll remove
-> this preamble and note the required inspec version
+> This functionality released in inspec 1.6.0 on 11/28/2016
 
 We've standardized our kitchen verifier on
 [Inspec](https://github.com/chef/inspec) at my corner of NCR and we're in need
